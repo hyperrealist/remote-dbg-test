@@ -65,6 +65,17 @@ WORKDIR /workspaces
 COPY --chown=1000:1000 . visr-tiled
 # ----------------------------------------------------------------------------------------------------- /source code
 
-# change this entrypoint if it is not the same as the repo
-ENTRYPOINT ["remote-dbg-test"]
-CMD ["--version"]
+# # change this entrypoint if it is not the same as the repo
+# ENTRYPOINT ["remote-dbg-test"]
+# CMD ["--version"]
+
+# ----------------------------------------------------------------------------------------------------- user
+# RUN echo "user:x:37149:37149:Dynamic User:/home/user:/bin/bash" >> /etc/passwd
+# COPY entrypoint.sh /entrypoint.sh
+# RUN chmod +x /entrypoint.sh
+# ENTRYPOINT ["/entrypoint.sh"]
+# ----------------------------------------------------------------------------------------------------- /user
+# CMD ["tiled", "serve", "config", "--host", "0.0.0.0", "--port", "8000", "--scalable"]
+CMD ["python", "-Xfrozen_modules=off", "-m", "debugpy", \
+    "--listen", "0.0.0.0:5678", "--wait-for-client", \
+    "-m", "remote-dbg-test", "--version"]
