@@ -78,4 +78,4 @@ COPY --chown=1000:1000 . visr-tiled
 # CMD ["tiled", "serve", "config", "--host", "0.0.0.0", "--port", "8000", "--scalable"]
 CMD ["python", "-Xfrozen_modules=off", "-m", "debugpy", \
     "--listen", "0.0.0.0:5678", "--wait-for-client", \
-    "-m", "remote-dbg-test", "--version"]
+    "-m", "remote_dbg_test", "--version"]
