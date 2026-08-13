@@ -1,0 +1,16 @@
+# Changes here will be overwritten by Copier
+_commit: 5.3.0
+_src_path: https://github.com/DiamondLightSource/python-copier-template.git
+author_email: hiran.wijesinghe@diamond.ac.uk
+author_name: Hiran Wijesinghe
+description: ''
+distribution_name: remote-dbg-test
+docker: true
+docs_type: README
+git_platform: github.com
+github_org: hyperrealist
+package_name: remote_dbg_test
+pypi: false
+repo_name: remote-dbg-test
+strict_typing: true
+type_checker: pyright
