@@ -66,7 +66,7 @@ COPY --chown=1000:1000 . visr-tiled
 # ----------------------------------------------------------------------------------------------------- /source code
 
 # # change this entrypoint if it is not the same as the repo
-# ENTRYPOINT ["remote-dbg-test"]
+ENTRYPOINT ["remote-dbg-test"]
 # CMD ["--version"]
 
 # ----------------------------------------------------------------------------------------------------- user
@@ -76,6 +76,6 @@ COPY --chown=1000:1000 . visr-tiled
 # ENTRYPOINT ["/entrypoint.sh"]
 # ----------------------------------------------------------------------------------------------------- /user
 # CMD ["tiled", "serve", "config", "--host", "0.0.0.0", "--port", "8000", "--scalable"]
-CMD ["python", "-Xfrozen_modules=off", "-m", "debugpy", \
-    "--listen", "0.0.0.0:5678", "--wait-for-client", \
-    "-m", "remote_dbg_test", "--version"]
+# CMD ["python", "-Xfrozen_modules=off", "-m", "debugpy", \
+#     "--listen", "0.0.0.0:5678", "--wait-for-client", \
+#     "-m", "remote_dbg_test", "--version"]
